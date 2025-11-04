@@ -5,6 +5,7 @@ import com.example.student_management.dto.StudentDto;
 import com.example.student_management.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class StudentController {
     }
 
     @GetMapping("/students/{id}")
-    public StudentDto getStudentById(){
-        return new StudentDto(4l,"Abhishek", "abhishek@gmail.com");
+    public String getStudentById(@PathVariable Long id){
+        return "Path variable " + id;
     }
 }
